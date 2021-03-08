@@ -7,10 +7,22 @@ const fname = "Nabanita";
 const lname = "Bag";
 const year = new Date().getFullYear();
 const image = "https://picsum.photos/200";
+const customStyle = {
+  color: "purple",
+  fontSize: "50px",
+  border: "1px solid black"
+};
+
+customStyle.fontSize = "40px";
 
 ReactDOM.render(
   <div>
-    <h1 className="heading" contentEditable="true" spellCheck="false">
+    <h1
+      style={customStyle}
+      className="heading"
+      contentEditable="true"
+      spellCheck="false"
+    >
       Hello {fname + " " + lname}!
     </h1>
     {/* <h1>Hello {`${fname} ${lname}`}!</h1> */}
