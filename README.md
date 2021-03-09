@@ -4,7 +4,7 @@ Remember those weighing machines at railway stations which gave you your lucky n
 Tools learnt:
 React.js basics using JSX.
 
-Technologies and Frameworks used
+Technologies and Frameworks used:
 Javascript
 HTML
 CSS
