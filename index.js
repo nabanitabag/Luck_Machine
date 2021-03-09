@@ -5,15 +5,26 @@ import ReactDOM from "react-dom";
 
 const fname = "Nabanita";
 const lname = "Bag";
-const year = new Date().getFullYear();
+const date = new Date();
+const year = date.getFullYear();
+const currentTime = date.getHours();
 const image = "https://picsum.photos/200";
 const customStyle = {
-  color: "purple",
-  fontSize: "50px",
-  border: "1px solid black"
+  color: ""
 };
 
-customStyle.fontSize = "40px";
+let greeting;
+
+if(currentTime<12){
+  greeting = "Morning";
+  customStyle.color = "red";
+} else if(currentTime<18){
+  greeting = "Afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "Evening";
+  customStyle.color = "blue";
+}
 
 ReactDOM.render(
   <div>
@@ -23,12 +34,12 @@ ReactDOM.render(
       contentEditable="true"
       spellCheck="false"
     >
-      Hello {fname + " " + lname}!
+      Good {greeting} {fname + " " + lname}!
     </h1>
     {/* <h1>Hello {`${fname} ${lname}`}!</h1> */}
     {/* js expression only, not statements */}
-    <p>Your lucky number is {Math.floor(Math.random() * 100)}.</p>
-    <p>Your lucky image is</p>
+    <p>Your lucky number for the day is {Math.floor(Math.random() * 100)}.</p>
+    <p>And here is your photo of the day is</p>
     <img src={image} alt="img" />
     <p>Created by {fname}</p>
     <p>Copyright {year}</p>
